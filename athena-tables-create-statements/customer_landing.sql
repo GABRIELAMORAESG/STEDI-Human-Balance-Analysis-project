@@ -1,0 +1,15 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS `stedi`.`customer_landing` (
+  `customerName` string,
+  `email` string,
+  `phone` bigint,
+  `birthDay` string,
+  `serialNumber` string,
+  `registrationDate` bigint,
+  `lastUpdateDate` bigint,
+  `shareWithResearchAsOfDate` bigint,
+  `shareWithFriendsAsOfDate` bigint
+)
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION 's3://gabi-udacity-glue/customer/landing/'
+TBLPROPERTIES ('classification' = 'json');
