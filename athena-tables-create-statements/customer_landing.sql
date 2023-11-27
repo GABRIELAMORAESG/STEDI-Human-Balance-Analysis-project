@@ -7,7 +7,8 @@ CREATE EXTERNAL TABLE IF NOT EXISTS `stedi`.`customer_landing` (
   `registrationDate` bigint,
   `lastUpdateDate` bigint,
   `shareWithResearchAsOfDate` bigint,
-  `shareWithFriendsAsOfDate` bigint
+  `shareWithPublicAsOfDate` bigint, 
+  `shareWithFriendsAsOfDate` bigint, 
 )
 ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
 STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat' OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'

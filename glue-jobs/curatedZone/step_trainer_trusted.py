@@ -30,7 +30,7 @@ AmazonS3_node1701003966679 = glueContext.create_dynamic_frame.from_options(
     connection_type="s3",
     format="parquet",
     connection_options={
-        "paths": ["s3://gabi-udacity-glue/customer/trusted/"],
+        "paths": ["s3://gabi-udacity-glue/customer/curated/"],
         "recurse": True,
     },
     transformation_ctx="AmazonS3_node1701003966679",
